@@ -1,5 +1,395 @@
 /* CSS Document */
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Helvetica Neue;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #111111;
+    line-height: 36px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #111111;
+    line-height: 36px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4%;
+    height: 68px;
+}
+
+#header1, #header3 {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+header aside {
+    flex-grow: 3;
+
+}
+
+header span {
+    color: black;
+    margin-left: -16px;
+    margin-top: 5px;
+    position: absolute;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 3%;
+
+
+}
+
+nav a,
+nav button {
+    margin: 0px 15px 0px 15px;
+}
+
+nav article {
+    display: block;
+}
+
+nav button {
+    /*    padding: 0;*/
+    border: none;
+    background: #ffffff;
+}
+
+
+aside ul {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    opacity: 0;
+    transition: all 500ms ease;
+    transform: translateX(-4vw);
+    z-index: 4;
+    height: 50vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    align-content: center;
+}
+
+aside ul a {
+    padding: 0px 20px 0px 20px;
+    text-align: center;
+    list-style: none;
+    color: #111111;
+    font-size: 16px;
+
+
+}
+
+.show {
+    opacity: 1;
+}
+
+article {
+    display: flex;
+}
+
+#slider {
+    margin: 0 auto;
+    margin-bottom: 3em;
+    height: 72px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+
+
+figure {
+    margin: 0;
+}
+
+figure img {
+    width: 100%;
+}
+
+main {
+    margin: 0 2em 0 2em;
+}
+
+.schoenen_wrapper {
+    display: grid;
+    grid-gap: 6px;
+    grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
+    justify-content: center;
+}
+
+
+/*|  Telefoon Scherm  |*/
+@media (max-width: 1000px) {
+    body {
+        background-color: ;
+    }
+
+    .schoenen_wrapper {
+        grid-template-columns: repeat(2, minmax(150px, 592px));
+    }
+
+    .schoen1{
+        display: none;
+    }
+
+    .footer_wrapper{
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    aside ul {
+        background-color: #f5f5f5;
+    }
+
+}
+
+
+
+/*|  Computer scherm  |*/
+@media(min-width: 1000px) {
+    aside ul {
+        flex-direction: row;
+        opacity: 1;
+    }
+
+    header button {
+        display: none;
+    }
+
+    .wrapper {
+    display: grid;
+    grid-template-columns: 1.6fr 400px;
+    grid-gap: 3em;
+    margin: 0 3em 0 3em;
+    max-width: 1440px;
+    justify-items: center;
+    margin-bottom: 2em;
+}
+    .footer_wrapper{
+        grid-template-columns: 1fr 1fr 1fr 3fr;
+    }
+}
+
+@media (min-width: 1200px) {
+    .schoenen_wrapper {
+        grid-template-columns: repeat(3, minmax(292px, 592px));
+    }
+}
+
+/* Schoen detail pagina */
+
+
+.schoen1_afb {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.8em;
+}
+
+.schoen1_afb img {
+    width: 100%;
+}
+
+.schoen2_afb {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.8em;
+}
+
+.schoen2_afb img {
+    width: 100%;
+}
+
+/*|   BESCHRIJVING  |*/
+#Rode_schoen  {
+    width: 69px;
+    box-shadow: rgb(229, 229, 229) 0px 0px 0px 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#Blauwe_schoen{
+    width: 69px;
+    box-shadow: rgb(229, 229, 229) 0px 0px 0px 1px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#Blauwe_schoen:hover{
+    border: 1px black solid;
+}
+
+#Rode_schoen:hover {
+    border: 1px black solid;
+}
+
+.border{
+    border: 1px black solid;
+}
+
+.maatwijzer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.maat_label {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.4em;
+
+
+}
+
+.maat_label label {
+    /*    border: 1px #f5f5f5 solid;*/
+    box-shadow: rgb(229, 229, 229) 0px 0px 0px 1px;
+    height: 48px;
+    border-radius: 4px;
+    text-align: center;
+    padding-top: 0.8em;
+    cursor: pointer;
+}
+
+.border{
+    border: 1px black solid;
+}
+
+.maat_label label:hover {
+    border: 1px black solid;
+}
+
+#winkel_wagen {
+    width: 100%;
+    padding: 18px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: all .2s ease;
+    background: #111;
+    color: #fff;
+    border: 0;
+    margin: 2em 0 0.25em 0;
+}
+
+#favoriet {
+    width: 100%;
+    padding: 18px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: all .2s ease;
+    background: #fff;
+    color: #111;
+    box-shadow: rgb(229, 229, 229) 0px 0px 0px 1.3px;
+    border: 0;
+}
+
+/*|  ANIMATIE  |*/
+
+@keyframes updating-winkel-mandje {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.winkel_mandje.updated {
+    animation-name: updating-winkel-mandje;
+    animation-duration: .5s;
+    transform-origin: center top;
+}
+
+/*|   FOOTER  |*/
+
+footer {
+    background-color: #111;
+    margin-top: 2em;
+}
+
+
+.footer_wrapper {
+    display: grid;
+    color: #fff;
+}
+
+footer section {
+    margin: 2em;
+}
+
+footer li {
+    list-style: none;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: 24px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+span {
+    color: #7e7e7e;
+}
+
+span:hover {
+    color: #fff;
+}
+
+footer svg {
+    fill: #7e7e7e;
+}
+
+.footer_iconen {
+    display: flex;
+    margin-top: 3em;
+    justify-content: flex-end;
+}
+
+.footer_iconen a {
+    margin-right: 1em;
+}
+
+.sub_footer {
+    border-top: 1px solid #222;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 10px;
+    margin: 2em;
+}
+
+
+.sub_footer1 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sub_footer1 span{
+    margin-right: 2em;
+}
